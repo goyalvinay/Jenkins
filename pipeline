@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+    stages{
+        stage('git_checkout'){
+            steps {
+                git 'https://github.com/sahooashok709/time-tracker.git'
+            }
+        }
+        stage("clean_package"){
+            steps {
+                bat "mvn clean package"
+            }
+        }
+    }
+}
